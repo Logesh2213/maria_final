@@ -50,7 +50,7 @@ const CTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <motion.a
-              href="tel:+917010680759"
+              href="tel:9042177779"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full font-semibold hover:bg-white/20 transition-all border-2 border-white/30"
@@ -59,7 +59,7 @@ const CTA = () => {
               <span>Phone</span>
             </motion.a>
             <motion.a
-              href="https://wa.me/917010680759?text=Hello%20Maria%20Housing%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+              href="https://wa.me/919042177779?text=Hello%20Maria%20Housing%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -70,7 +70,7 @@ const CTA = () => {
               <span>WhatsApp</span>
             </motion.a>
             <motion.a
-              href="mailto:Hello@mariasupercity.com"
+              href="mailto:infosupercity@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full font-semibold hover:bg-white/20 transition-all border-2 border-white/30"
