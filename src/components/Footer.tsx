@@ -7,16 +7,16 @@ const Footer = () => {
     { name: 'About', href: '/about' },
     { name: 'Projects', href: '/gallery' },
     { name: 'Services', href: '/services' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ];
 
   const services = [
-    'Construction',
-    'Design',
+    'Commercial',
+    'Residential',
+    'Farmhouse',
     'Renovation',
-    'Real Estate',
-    'Consultancy',
-    'Approvals',
+    'Layout',
   ];
 
   return (
@@ -69,13 +69,13 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-display font-bold mb-6">Contact</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-background-400">
-                <MapPin size={18} />
-                <span>Vellore, Tamil Nadu</span>
+              <li className="flex items-start gap-3 text-background-400">
+                <MapPin size={18} className="mt-1" />
+                <span>98/A, Bank Man's Colony, Azhagiri Nagar Alamelumangapuram, Vellore-9</span>
               </li>
               <li className="flex items-center gap-3 text-background-400">
                 <Phone size={18} />
-                <span>+91 70106 80759</span>
+                <span>9042177779</span>
               </li>
             </ul>
           </div>

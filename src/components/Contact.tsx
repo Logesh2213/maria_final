@@ -13,19 +13,38 @@ const Contact = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your enquiry! We will get back to you soon.');
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      projectType: '',
-      location: '',
-      budget: '',
-      message: '',
-    });
+    
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('Thank you for your enquiry! We will get back to you soon.');
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          projectType: '',
+          location: '',
+          budget: '',
+          message: '',
+        });
+      } else {
+        alert('Failed to send your message. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Failed to send your message. Please try again later.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -70,7 +89,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-display font-bold text-background-900 mb-2">Visit Us</h3>
-                <p className="text-background-600 leading-relaxed">No, 98/A, Bankmans Colony, Alazhgiri Nagar, Alamelumangapuram, Sathuvachari, Vellore, Tamil Nadu 632009</p>
+                <p className="text-background-600 leading-relaxed">98/A, Bank Man's Colony, Azhagiri Nagar Alamelumangapuram, Vellore-9</p>
               </div>
             </div>
 
@@ -80,7 +99,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-display font-bold text-background-900 mb-2">Call Us</h3>
-                <p className="text-background-600 text-lg">+91 70106 80759</p>
+                <p className="text-background-600 text-lg">9042177779</p>
               </div>
             </div>
 
@@ -90,7 +109,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-display font-bold text-background-900 mb-2">Email Us</h3>
-                <p className="text-background-600 text-lg">Hello@mariasupercity.com</p>
+                <p className="text-background-600 text-lg">infosupercity@gmail.com</p>
               </div>
             </div>
 
@@ -101,12 +120,12 @@ const Contact = () => {
               <div>
                 <h3 className="text-2xl font-display font-bold text-background-900 mb-2">WhatsApp</h3>
                 <a
-                  href="https://wa.me/917010680759?text=Hello%20Maria%20Housing%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                  href="https://wa.me/919042177779?text=Hello%20Maria%20Housing%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-background-600 text-lg hover:text-accent-600 transition-colors"
                 >
-                  +91 70106 80759
+                  9042177779
                 </a>
               </div>
             </div>
@@ -171,11 +190,11 @@ const Contact = () => {
                     className="w-full px-5 py-4 rounded-2xl border border-background-300 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all bg-background-50"
                   >
                     <option value="">Select type</option>
-                    <option value="Residential">Residential</option>
                     <option value="Commercial">Commercial</option>
+                    <option value="Residential">Residential</option>
+                    <option value="Farmhouse">Farmhouse</option>
                     <option value="Renovation">Renovation</option>
-                    <option value="Real Estate">Real Estate</option>
-                    <option value="Design">Design</option>
+                    <option value="Layout">Layout</option>
                   </select>
                 </div>
 

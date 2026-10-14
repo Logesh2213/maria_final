@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import aboutImage from '../../Home/IMG-20240223-WA0039.webp';
-import chairmanImage from '../assets/chairman.png';
-import directorImage from '../assets/director.png';
-
+import chairmanImage from '../../chairman.png';
+import directorImage from '../../director.png';
+ 
 const About = () => {
   const pillars = [
     'Construction',

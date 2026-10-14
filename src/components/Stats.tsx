@@ -27,7 +27,13 @@ const Stats = () => {
             <span className="text-accent-400">CONFIDENT EXECUTION.</span>
           </h2>
           <div className="flex items-center justify-center gap-4">
-            <p className="text-5xl font-display font-bold text-accent-300">150+</p>
+            <p className="text-5xl font-display font-bold text-accent-300">11 Years</p>
+            <p className="max-w-32 text-left text-sm font-semibold uppercase tracking-[0.16em] text-background-200">
+              Experience
+            </p>
+          </div>
+          <div className="flex items-center justify-center gap-4 mt-4">
+            <p className="text-5xl font-display font-bold text-accent-300">90+</p>
             <p className="max-w-32 text-left text-sm font-semibold uppercase tracking-[0.16em] text-background-200">
               Projects Completed
             </p>

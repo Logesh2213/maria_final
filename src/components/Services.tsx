@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Home, PenTool, Wrench, Building, MessageCircle, FileCheck } from 'lucide-react';
+import { ArrowRight, Home, PenTool, Wrench, Building, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const MotionLink = motion.create(Link);
@@ -8,39 +8,33 @@ const Services = () => {
   const services = [
     {
       number: '01',
-      icon: Home,
-      title: 'CONSTRUCTION',
-      description: 'From planning and site execution to finishing, we manage the full build journey with practical oversight and quality control.',
+      icon: Building,
+      title: 'COMMERCIAL',
+      description: 'Expert construction of commercial spaces including offices, retail outlets, and business complexes designed for functionality and aesthetics.',
     },
     {
       number: '02',
-      icon: PenTool,
-      title: 'DESIGN',
-      description: '2D plans and 3D visualizations that help you understand the space before it is built.',
+      icon: Home,
+      title: 'RESIDENTIAL',
+      description: 'Building dream homes with attention to detail, from planning to execution, creating spaces that reflect your lifestyle.',
     },
     {
       number: '03',
+      icon: PenTool,
+      title: 'FARMHOUSE',
+      description: 'Designing and constructing beautiful farmhouses that blend modern comfort with natural surroundings.',
+    },
+    {
+      number: '04',
       icon: Wrench,
       title: 'RENOVATION',
       description: 'Transform an existing property into a space that feels more functional, more beautiful and more personal.',
     },
     {
-      number: '04',
-      icon: Building,
-      title: 'REAL ESTATE',
-      description: 'Strategic guidance for residential and commercial property decisions across the buying and development journey.',
-    },
-    {
       number: '05',
-      icon: MessageCircle,
-      title: 'CONSULTANCY',
-      description: 'Practical advice to help you understand requirements, feasibility, budget and the right next steps.',
-    },
-    {
-      number: '06',
       icon: FileCheck,
-      title: 'APPROVALS',
-      description: 'Support with documentation and approvals so your project progresses with clarity and confidence.',
+      title: 'LAYOUT',
+      description: 'Comprehensive layout planning and design services for optimal space utilization and architectural excellence.',
     },
   ];
 
