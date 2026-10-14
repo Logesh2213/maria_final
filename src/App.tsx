@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import HomeStats from './components/HomeStats';
 import HomeServices from './components/HomeServices';
@@ -14,12 +15,14 @@ import About from './components/About';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Blog from './components/Blog';
+import BlogPostDetail from './components/BlogPostDetail';
 import Footer from './components/Footer';
 import ProjectDetailsPage from './components/ProjectDetailsPage';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen">
         <Navbar />
         <Routes>
@@ -29,6 +32,7 @@ function App() {
           <Route path="/gallery" element={<><Gallery /><Footer /></>} />
           <Route path="/contact" element={<><Contact /><Footer /></>} />
           <Route path="/blog" element={<><Blog /><Footer /></>} />
+          <Route path="/blog/:id" element={<><BlogPostDetail /><Footer /></>} />
           <Route path="/project/:id" element={<ProjectDetailsPage />} />
         </Routes>
       </div>

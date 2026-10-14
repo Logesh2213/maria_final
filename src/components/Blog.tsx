@@ -54,7 +54,7 @@ const Blog = () => {
               Blog
             </h1>
             <p className="mt-4 text-lg text-white/80">
-              Insights, tips, and stories from the world of construction and design
+              Expert insights, innovative ideas, and inspiring stories from the world of construction and design
             </p>
           </motion.div>
         </div>
