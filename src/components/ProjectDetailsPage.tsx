@@ -82,7 +82,7 @@ const ProjectDetailsPage = () => {
       { type: '5 BHK', area: '4800 sq.ft', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80' },
     ],
     walkthrough: {
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      youtubeSearchUrl: 'https://www.youtube.com/results?search_query=model+apartment+walkthrough+interior+tour',
       description: 'Experience our model apartment through this immersive virtual walkthrough. See the spacious living areas, premium finishes, and thoughtful design details.',
     },
     gallery: [
@@ -245,16 +245,16 @@ const ProjectDetailsPage = () => {
               Model Apartment Walkthrough
             </h2>
             <p className="text-background-600 mb-6">{dummyData.walkthrough.description}</p>
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <iframe
-                src={dummyData.walkthrough.videoUrl}
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+            <a
+              href={dummyData.walkthrough.youtubeSearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Find model apartment walkthrough videos on YouTube"
+              className="group flex aspect-video flex-col items-center justify-center gap-4 rounded-2xl bg-background-900 px-6 text-center text-white shadow-lg transition-colors hover:bg-background-800"
+            >
+              <Video className="text-accent-400 transition-transform group-hover:scale-110" size={48} />
+              <span className="text-lg font-semibold">Explore model apartment walkthroughs on YouTube</span>
+            </a>
           </motion.div>
         );
 
