@@ -25,7 +25,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <img src="/Logo.png" alt="Maria Housing" className="h-12 w-auto mb-6" />
+            <img
+              src="/maria-housing-logo.png"
+              alt="Maria Housing"
+              className="mb-6 h-auto w-full max-w-[220px] object-contain"
+            />
             <p className="text-background-400 mb-4 leading-relaxed">
               Building Spaces. Creating Futures.
             </p>
