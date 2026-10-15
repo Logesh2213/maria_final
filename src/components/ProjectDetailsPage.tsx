@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Home, Layout, Video, Image, Building, Users, Info } from 'lucide-react';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -45,6 +46,9 @@ const ProjectDetailsPage = () => {
   ];
 
   const project = projects.find(p => p.id === id) || projects[0];
+  const pageTitle = `${project.title} in ${project.location.split(',')[0]} | Maria Housing`;
+  const pageDescription = `${project.title} is a ${project.category.toLowerCase()} project by Maria Housing in ${project.location}. Explore project details, floor plans, and gallery.`;
+  const pageUrl = `https://mariahousing.com/project/${project.id}`;
 
   const sections = [
     { id: 'synopsis', icon: Info, title: 'Project Synopsis' },
@@ -350,6 +354,20 @@ const ProjectDetailsPage = () => {
 
   return (
     <div className="min-h-screen bg-background-50">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={project.image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={project.image} />
+      </Helmet>
       <Navbar />
       {/* Header */}
       <div className="relative h-64 md:h-96 pt-20">

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Share2 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const blogPosts = {
   1: {
@@ -8,7 +9,7 @@ const blogPosts = {
     excerpt: 'Discover how our innovative construction approach has reshaped residential living in Vellore, delivering over 90+ successful projects with unmatched quality and customer satisfaction.',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     author: 'Maria Housing Team',
-    date: 'Oct 15, 2024',
+    date: 'Jan 15, 2025',
     content: `
       <p class="mb-6 text-lg leading-relaxed">At Maria Housing, we believe that every home tells a story. For over 11 years, we've been crafting these stories across Vellore, transforming empty plots into vibrant living spaces that families cherish. Our journey of 90+ completed projects represents not just buildings, but dreams realized and trust earned.</p>
       
@@ -32,7 +33,7 @@ const blogPosts = {
     excerpt: 'Discover the latest architectural trends shaping contemporary residential spaces, from sustainable materials to smart home integration.',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
     author: 'Maria Housing Team',
-    date: 'Oct 10, 2024',
+    date: 'Dec 10, 2024',
     content: `
       <p class="mb-6 text-lg leading-relaxed">The world of home design is constantly evolving, and 2024 brings exciting new trends that blend functionality with aesthetics. At Maria Housing, we stay ahead of these trends to deliver homes that are both contemporary and timeless.</p>
       
@@ -53,7 +54,7 @@ const blogPosts = {
     excerpt: 'Exploring eco-friendly building practices that reduce environmental impact while creating beautiful, durable structures.',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
     author: 'Maria Housing Team',
-    date: 'Oct 5, 2024',
+    date: 'Nov 5, 2024',
     content: `
       <p class="mb-6 text-lg leading-relaxed">The construction industry is undergoing a significant transformation as sustainability becomes a core priority. At Maria Housing, we're committed to leading this change in Vellore.</p>
       
@@ -74,7 +75,7 @@ const blogPosts = {
     excerpt: 'Expert advice on transforming historic homes while preserving their character and charm for modern living.',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     author: 'Maria Housing Team',
-    date: 'Sep 28, 2024',
+    date: 'Oct 28, 2024',
     content: `
       <p class="mb-6 text-lg leading-relaxed">Renovating an older property presents unique challenges and opportunities. These homes often possess character and craftsmanship that's hard to replicate in new construction.</p>
       
@@ -116,7 +117,7 @@ const blogPosts = {
     excerpt: 'Creating beautiful farmhouse retreats that combine rustic charm with contemporary amenities and sustainable design.',
     image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80',
     author: 'Maria Housing Team',
-    date: 'Sep 15, 2024',
+    date: 'Aug 15, 2024',
     content: `
       <p class="mb-6 text-lg leading-relaxed">Farmhouses represent the perfect blend of rustic charm and modern comfort. At Maria Housing, we specialize in creating farmhouse retreats that connect residents with nature while providing all contemporary amenities.</p>
       
@@ -137,7 +138,7 @@ const blogPosts = {
     excerpt: 'A comprehensive guide to navigating the approval process for construction projects in Vellore and Tamil Nadu.',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
     author: 'Maria Housing Team',
-    date: 'Sep 10, 2024',
+    date: 'Jul 10, 2024',
     content: `
       <p class="mb-6 text-lg leading-relaxed">Navigating the building approval process in Tamil Nadu can be complex. At Maria Housing, we guide our clients through every step to ensure smooth project execution.</p>
       
@@ -158,7 +159,7 @@ const blogPosts = {
     excerpt: 'How advanced design technology helps clients understand and customize their projects before construction begins.',
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
     author: 'Maria Housing Team',
-    date: 'Sep 5, 2024',
+    date: 'Jun 5, 2024',
     content: `
       <p class="mb-6 text-lg leading-relaxed">One of the biggest challenges in construction is helping clients visualize their future home. At Maria Housing, our advanced 2D and 3D design services bridge this gap effectively.</p>
       
@@ -179,7 +180,7 @@ const blogPosts = {
     excerpt: 'Smart ways to optimize your construction budget without compromising on quality or design excellence.',
     image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80',
     author: 'Maria Housing Team',
-    date: 'Aug 28, 2024',
+    date: 'May 28, 2024',
     content: `
       <p class="mb-6 text-lg leading-relaxed">Building a home is a significant investment, but there are smart strategies to optimize your budget without sacrificing quality. Maria Housing helps clients achieve their dreams within their financial means.</p>
       
@@ -216,6 +217,20 @@ const BlogPostDetail = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{`${post.title} | Maria Housing`}</title>
+        <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={`https://mariahousing.com/blog/${id}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://mariahousing.com/blog/${id}`} />
+        <meta property="og:title" content={`${post.title} | Maria Housing`} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${post.title} | Maria Housing`} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={post.image} />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[400px] overflow-hidden">
         <div
