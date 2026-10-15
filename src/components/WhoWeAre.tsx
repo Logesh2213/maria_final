@@ -42,18 +42,16 @@ const WhoWeAre = () => {
             </div>
 
             <div className="bg-background-50 rounded-2xl p-6 border border-background-200">
-              <p className="text-3xl font-display font-bold text-accent-600">10+ years of experience.</p>
+              <p className="text-3xl font-display font-bold text-accent-600">11+ years of experience.</p>
             </div>
 
-            <motion.a
-              href="#about"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <a
+              href="#about-details"
               className="inline-flex items-center gap-2 bg-background-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-background-800 transition-all shadow-xl"
             >
               ABOUT MARIA
               <ArrowRight size={20} />
-            </motion.a>
+            </a>
           </motion.div>
         </div>
       </div>

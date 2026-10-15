@@ -14,7 +14,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-32 bg-background-50 relative overflow-hidden">
+    <section id="about-details" className="py-32 bg-background-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <motion.div
